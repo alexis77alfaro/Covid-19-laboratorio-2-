@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.GroupP3.dao.TbpersonDao;
 import com.GroupP3.model.Tbperson;
+import com.google.gson.Gson;
 
 /**
  * Servlet implementation class servlectControl
@@ -36,19 +37,22 @@ public class servlectControl extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String duiP = request.getParameter("dui");
-		
-		Tbperson tbp = new Tbperson();
-		TbpersonDao tbpDao = new TbpersonDao();
-		
-		tbp.setCmpDui(duiP);
-		
-		int respuesta = tbpDao.confirmacionTbPerson(tbp).size();
-		
-		if(respuesta == 1) {		
-			response.sendRedirect("beneficiado.jsp");
-		} else {
-			response.sendRedirect("beneficiadont.jsp");
+		try {
+			
+			String duiP = request.getParameter("data");
+			System.out.println(duiP);
+			
+			Tbperson tbp = new Tbperson();
+			TbpersonDao tbpDao = new TbpersonDao();
+			
+			tbp.setCmpDui(duiP);
+			
+			Gson json = new Gson();
+			
+			response.getWriter().append(json.toJson(tbpDao.confirmacionTbPerson(tbp)));
+			
+		} catch (Exception e) {
+			System.out.println("Error: " + e.getMessage());
 		}
 	}
 
