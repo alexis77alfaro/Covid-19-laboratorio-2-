@@ -1,0 +1,97 @@
+.beneficiado{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 80%;
+	padding: 20px;
+	margin: 20px 10px;
+}
+
+.beneficiado img{
+	width: 7%;
+}
+
+.beneficiado h2{
+	text-align: center;
+	font-weight: bold;
+	font-size: 36px;
+	width: 70%;
+	margin: 25px auto;
+}
+
+.beneficiado h3{
+	text-align: center;
+	font-weight: normal;
+	color: #888888;
+	font-size: 28px;
+	width: 70%;
+	margin: 25px auto;
+}
+
+.beneficiado a{
+	text-decoration: none;
+	text-align: center;
+	font-size: 18px;
+	width: 12%;
+	color: #FFF;
+	padding: 10px;
+	margin-bottom: 20px;
+	background-color: #29a19c;
+	border-radius: 20px;
+}
+
+.beneficiado a:hover{
+	cursor: pointer;
+	background-color: #21bf73;
+}
+
+.beneficiado span{
+	text-align: center;
+	font-weight: bold;
+	font-size: 26px;
+	width: 70%;
+	margin: 25px auto;
+}
+
+.beneficiado p{
+	width: 40%;
+	font-size: 18px;
+	text-align: center;
+	margin: 20px auto;
+}
+
+.lastText{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.lastText img{
+	width: 12%;
+}
+.lastText p{
+	font-size: 22px;
+	padding: 10px;
+	width: 70%;
+	color: #758184;
+}
+
+.anuncio{
+	width: 60%;
+	background-color: #dbdbdb;
+}
+
+.anuncio p{
+	text-align: center;
+	margin: 20px 10px;
+	width: 90%;
+}
+
+.otroColor{
+	font-weight: normal;
+	font-size: 18px;
+	color: #29a19c;
+}
