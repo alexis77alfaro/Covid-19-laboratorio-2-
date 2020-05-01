@@ -10,8 +10,28 @@
   	<description></description>
   	<servlet-class>com.GroupP3.control.servlectControl</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>servelAdmin</servlet-name>
+  	<display-name>servelAdmin</display-name>
+  	<description></description>
+  	<servlet-class>com.GroupP3.control.servelAdmin</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>serveleteCrud</servlet-name>
+  	<display-name>serveleteCrud</display-name>
+  	<description></description>
+  	<servlet-class>com.GroupP3.control.serveleteCrud</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>servlectControl</servlet-name>
   	<url-pattern>/servlectControl</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>servelAdmin</servlet-name>
+  	<url-pattern>/servelAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>serveleteCrud</servlet-name>
+  	<url-pattern>/serveleteCrud</url-pattern>
   </servlet-mapping>
 </web-app>

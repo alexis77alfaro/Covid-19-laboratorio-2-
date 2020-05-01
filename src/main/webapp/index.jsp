@@ -7,7 +7,7 @@
 <body>
 	<header>
 		<div class="adminBtn">
-			<a href="#">Entrar al Administrador</a>
+			<a href="iniciar.jsp">Entrar al Administrador</a>
 		</div>
 		<img src="imgs/lgES.png">
 	</header>

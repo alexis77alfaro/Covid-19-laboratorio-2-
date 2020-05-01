@@ -22,7 +22,7 @@ public class TbadminiDao {
 			
 		try {
 			em.getTransaction().begin();
-			result = em.createQuery("from Tbadmini as a where a.cmpPass='"+a.getCmpUsser()+"' and a.cmpUsser = '"+a.getCmpPass()+"'").getResultList();
+			result = em.createQuery("from Tbadmini as a where a.cmpPass='"+a.getCmpPass()+"' and a.cmpUsser = '"+a.getCmpUsser()+"'").getResultList();
 			em.getTransaction().commit();
 			
 		} catch (Exception e) {
