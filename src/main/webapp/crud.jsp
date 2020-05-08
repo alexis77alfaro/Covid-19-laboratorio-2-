@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,13 +8,16 @@
     <link rel="stylesheet" type="text/css" href="estilosCSS/estilos.css">
 
     <title>Document</title>
+
+    <script src="http://code.jquery.com/jquery-latest.js">
+    </script>
 </head>
 
 <script>
     $(document).ready(function() {
         $('#cargar').click(function(event) {
 
-            var btn = $('#carga').val();
+            var btn = $('#cargar').val();
 
 
             $.post('serveleteCrud', {
@@ -59,46 +62,49 @@
         </div>
         <img src="imgs/lgES.png">
     </header>
+         <input type="submit" name="a" id="cargar" value="cargar" id="table1">
+    <table class="table table-dark" >
+      <thead>
+          <th>id</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Dui</th>
 
-    <table class="table1" align="center">
-        <thead class="dark">
-            <th>Id</th>
-            <th>Nombres</th>
-            <th>Apellidos</th>
-            <th>Dui</th>
-        </thead>
-        <tbody>
+      </thead>
 
-        </tbody>
+      <tbody>
 
+      </tbody>
     </table>
 
-    <form action="serveleteCrud" method="GET">
+    <table align="center">
 
+        <thead></thead>
+        <tbody>
+            <tr>
+                <td>
+                    <form action="serveleteCrud" method="post">
+                    <p>ID</p> <input type="text" name="id">
+                    <p>Nombres</p> <input type="text" name="nombre">
+                    <p>Apellidos</p> <input type="text" name="apellido">
+                    <p>Dui</p> <input type="text" name="dui">
 
-        <input type="submit" name="carga" value="mostrar" id="cargar">
-        <table align="center">
-            <thead></thead>
-            <tr>
-                <p>Id</p> <input type="text" name="id" value=""></tr>
-            <tr>
-                <p>nombre</p> <input type="text" name="nombre" value=""></tr>
-            <tr>
-                <p>Apellido</p> <input type="text" name="apellido" value=""></tr>
-            <tr>
-                <p>Dui</p> <input type="text" name="dui" value=""></tr><br>
+                    <input type="submit" name="btn" value="agregar"  class="btn btn-info">
+                    <input type="submit" name="btn" value="actualizar" class="btn btn-info">
+                    <input type="submit" name="btn" value="eliminar"  class="btn btn-info">
+                </form>
+                </td>
+            </tr>
+        </tbody>
+ 
 
-            <input type="submit" name="btn" value="Insertar" name="save" class="btn btn-succes"> <br>
-            <input type="submit" name="btn" value="actualizar" name="update" class="btn btn-succes"><br>
-            <input type="submit" name="btn" value="eliminar" name="delete" class="btn btn-succes">
-        </table>
-
-    </form>
+    </table>
+    
     
     <footer>
-		<span>© Copyright 2020. Presidencia de la República de El Salvador.</span>
+		<span>ï¿½ Copyright 2020. Presidencia de la Repï¿½blica de El Salvador.</span>
 		<div class="">
-			<a href="https://www.presidencia.gob.sv/contactenos/">Contáctanos</a>
+			<a href="https://www.presidencia.gob.sv/contactenos/">Contï¿½ctanos</a>
 			<a href="https://www.facebook.com/PresidenciaSV">Facebook</a>
 			<a href="https://twitter.com/presidenciasv">Twitter</a>
 			<a href="https://www.instagram.com/presidenciasv/">Instagram</a>

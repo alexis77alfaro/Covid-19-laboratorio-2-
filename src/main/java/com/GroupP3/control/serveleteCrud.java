@@ -32,52 +32,7 @@ public class serveleteCrud extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 
-TbpersonDao benef=new TbpersonDao();
-Tbperson pers=new Tbperson();
-		 
-		
-		 
-		 String id=request.getParameter("id");
-		 String name=request.getParameter("nombre");
-		 String lastname=request.getParameter("apellido");
-		 String dui=request.getParameter("dui");
-		 
-		 
-		 
-		 
-		 String action=request.getParameter("btn");
-		
-		 
-		 try {
-			 
-			 if(action.equals("save")) {
-				 pers.setCmpId(Integer.parseInt(id));
-				 pers.setCmpNombre(name);
-				 pers.setCmpApellido(lastname);
-				 pers.setCmpDui(dui);
-				 benef.agregarDatos(pers);
-				 response.sendRedirect("index.jsp");
-			 }
-			 
-			 else if(action.equals("update")) {
-				 pers.setCmpId(Integer.parseInt(id));
-				 pers.setCmpNombre(name);
-				 pers.setCmpApellido(lastname);
-				 pers.setCmpDui(dui);
-				 benef.actualizar(pers);
-				 response.sendRedirect("index.jsp");
-			 }
-			 
-			 else if(action.equals("delete")) {
-				 response.sendRedirect("crud.jsp");
-				 pers.setCmpId(Integer.parseInt(id));
-				 
-				 benef.eliminar(pers);
-			 }
-			 
-		 }catch(Exception e) {
-			 System.out.print(e);
-		 }
+
 		
 		
 	}
@@ -88,8 +43,64 @@ Tbperson pers=new Tbperson();
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		
-		 
+		TbpersonDao benef=new TbpersonDao();
+		Tbperson pers=new Tbperson();
+				 
+				
+			Gson json=new Gson();
+			
+			try {
+				response.getWriter().append(json.toJson(benef.lista()));
+			}catch(Exception e) {
+				System.out.print(e);
+				String a;
+			}
+			//agregando datos 
+			
+			 
+			 String id=request.getParameter("id");
+			 String name=request.getParameter("nombre");
+			 String lastname=request.getParameter("apellido");
+			 String dui=request.getParameter("dui");
+			 
+			 
+			 
+			 
+			 String action=request.getParameter("btn");
+			
+			 
+			 try {
+				 
+				 if(action.equals("agregar")) {
+					 pers.setCmpId(Integer.parseInt(id));
+					 pers.setCmpNombre(name);
+					 pers.setCmpApellido(lastname);
+					 pers.setCmpDui(dui);
+					 benef.agregarDatos(pers);
+					
+				 }
+				 
+				 else if(action.equals("actualizar")) {
+					 pers.setCmpId(Integer.parseInt(id));
+					 pers.setCmpNombre(name);
+					 pers.setCmpApellido(lastname);
+					 pers.setCmpDui(dui);
+					 benef.actualizar(pers);
+					
+				 }
+				 
+				 else if(action.equals("eliminar")) {
+					 response.sendRedirect("crud.jsp");
+					 pers.setCmpId(Integer.parseInt(id));
+					 
+					 benef.eliminar(pers);
+				 }
+				 
+			 }catch(Exception e) {
+				 System.out.print(e);
+				 
+			 }
+//cargar datos
 			
 			 
 			 
